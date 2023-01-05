@@ -1,6 +1,6 @@
-Problem Link: https://leetcode.com/problems/delete-node-in-a-linked-list/description/
-Problem Name: 237. Delete Node in a Linked List (LeetCode)
-Solution: (correct Submission)
+// Problem Link: https://leetcode.com/problems/delete-node-in-a-linked-list/description/
+// Problem Name: 237. Delete Node in a Linked List (LeetCode)
+// Solution: (correct Submission)
 
 /**
  * Definition for singly-linked list.
