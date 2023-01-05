@@ -1,6 +1,6 @@
-Problem Link: https://leetcode.com/problems/palindrome-linked-list/description/
-Problem Name: 234. Palindrome Linked List (LeetCode)
-Solution:(correct submission)
+// Problem Link: https://leetcode.com/problems/palindrome-linked-list/description/
+// Problem Name: 234. Palindrome Linked List (LeetCode)
+// Solution:(correct submission)
 
 /**
  * Definition for singly-linked list.
