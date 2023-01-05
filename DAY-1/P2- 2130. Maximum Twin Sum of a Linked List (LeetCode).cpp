@@ -1,7 +1,6 @@
-Problem Link: https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/
-Problem Name: 2130. Maximum Twin Sum of a Linked List (LeetCode)
-
-Solution:(correct Submission)
+// Problem Link: https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/
+// Problem Name: 2130. Maximum Twin Sum of a Linked List (LeetCode)
+// Solution:(correct Submission)
 
 /**
  * Definition for singly-linked list.
