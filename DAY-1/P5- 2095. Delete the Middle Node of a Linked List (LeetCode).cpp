@@ -1,6 +1,6 @@
-Problem Link: https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/
-Problem Name: 2095. Delete the Middle Node of a Linked List (LeetCode)
-Solution: (correct Submission)
+// Problem Link: https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/
+// Problem Name: 2095. Delete the Middle Node of a Linked List (LeetCode)
+// Solution: (correct Submission)
 
 /**
  * Definition for singly-linked list.
