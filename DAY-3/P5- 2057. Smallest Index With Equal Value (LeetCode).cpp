@@ -1,5 +1,5 @@
 // Problem Link: https://leetcode.com/problems/smallest-index-with-equal-value/description/
-// Problem Name: 2057. Smallest Index With Equal Value
+// Problem Name: 2057. Smallest Index With Equal Value (LeetCode)
 // Solution: accepted submission
 
 class Solution {
