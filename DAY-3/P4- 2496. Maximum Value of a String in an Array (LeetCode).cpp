@@ -1,5 +1,5 @@
 // Problem Link: https://leetcode.com/problems/maximum-value-of-a-string-in-an-array/description/
-// Problem Name: 2496. Maximum Value of a String in an Array
+// Problem Name: 2496. Maximum Value of a String in an Array (LeetCode) 
 // Solution: Accepted sumbission
 
 
