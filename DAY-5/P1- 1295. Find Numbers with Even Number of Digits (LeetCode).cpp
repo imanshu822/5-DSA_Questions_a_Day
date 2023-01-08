@@ -1,5 +1,5 @@
 // Problem Link: https://leetcode.com/problems/find-numbers-with-even-number-of-digits/description/
-// Problem Name: 1295. Find Numbers with Even Number of Digits
+// Problem Name: 1295. Find Numbers with Even Number of Digits (LeetCode)
 // Solution: accepted submission
 
 class Solution {
