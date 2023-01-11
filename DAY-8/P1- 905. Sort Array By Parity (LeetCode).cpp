@@ -1,6 +1,6 @@
 // Problem Link: https://leetcode.com/problems/sort-array-by-parity/description/
 // Problen Name: 905. Sort Array By Parity (LeetCode)
-// Solution: accepted submission
+// Solution: accepted Submission
 
 class Solution {
 public:
