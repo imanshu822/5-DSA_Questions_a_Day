@@ -1,5 +1,5 @@
-// Problem Link: https://practice.geeksforgeeks.org/problems/kth-smallest-element5635/0
-// Problem Name: Kth smallest element (GFG)
+// Problem Link: https://practice.geeksforgeeks.org/problems/minimize-the-heights3351/0
+// Problem Name: Minimize the Heights II (GFG)
 // Solution: accepted submmission
 
 // User function template for C++
