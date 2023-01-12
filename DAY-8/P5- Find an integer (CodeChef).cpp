@@ -1,5 +1,5 @@
 // Problem Link: https://www.codechef.com/problems/SUMDIV2
-// Problem Name: Find an integer
+// Problem Name: Find an integer (CodeChef)
 // Problem Code: SUMDIV2
 // Solution: accepted Submission
 
