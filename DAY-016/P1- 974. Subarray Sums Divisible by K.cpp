@@ -1,5 +1,5 @@
 // Problem Link: https://leetcode.com/problems/subarray-sums-divisible-by-k/description/
-// Problem Name: 974. Subarray Sums Divisible by K
+// Problem Name: 974. Subarray Sums Divisible by K (LeetCode)
 // Solution: accepted Submission
 
 class Solution {
