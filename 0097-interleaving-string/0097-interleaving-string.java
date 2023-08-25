@@ -1,6 +1,7 @@
 class Solution {
     public boolean isInterleave(String s1, String s2, String s3) {
         Integer[][] dp = new Integer[101][101];
+        System.gc();
         return solve(s1, s2, s3, 0, 0, 0, dp) == 1 ? true : false;
     }
     private int solve(String s1, String s2, String s3, int i, int j, int k , Integer[][] dp) {
