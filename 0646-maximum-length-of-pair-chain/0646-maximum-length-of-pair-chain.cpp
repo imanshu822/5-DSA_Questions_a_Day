@@ -13,7 +13,6 @@ public:
                 prevEnd = pairs[i][1];  
             }
         }
-
         return count;
     }
 };
