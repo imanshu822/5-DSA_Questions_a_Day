@@ -1,21 +1,18 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
+        vector<int> map(256, -1);
+        int left = 0, right = 0;
         int n = s.size();
-        if(n == 0)
-            return 0;
         int maxLen = 0;
-        for(int i = 0; i < n; i++){
-            set<int> st;
-            for(int j = i; j < n; j++){
-                if(st.find(s[j]) != st.end()){
-                    break;
-                }
-                st.insert(s[j]);
-                int currLen = st.size();
-                maxLen = max(maxLen, currLen);
+        while(right < n){
+            if(map[s[right]] != -1){
+                left = max(map[s[right]] + 1, left);
             }
+            map[s[right]] = right;
+            maxLen = max(maxLen, right - left + 1);
+            right++;
         }
-        return maxLen == 0 ? n : maxLen;
+        return maxLen;
     }
 };
