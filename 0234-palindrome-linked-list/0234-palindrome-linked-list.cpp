@@ -31,6 +31,9 @@ public:
             slow = slow->next;
             fast = fast->next->next;
         }
+        if (fast != nullptr) {
+            slow = slow->next;
+        }
         if (prev) {
             prev->next = NULL;  // Split the list into two halves
         }
