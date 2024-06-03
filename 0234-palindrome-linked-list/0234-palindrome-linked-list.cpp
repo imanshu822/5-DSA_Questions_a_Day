@@ -10,20 +10,50 @@
  */
 class Solution {
 public:
-    bool isPalindrome(ListNode* head) {
-        vector<int> store;
+    ListNode* reverseLL(ListNode* head) {
         ListNode* curr = head;
-        while(curr){
-            store.push_back(curr->val);
-            curr = curr->next;
+        ListNode* prev = NULL;
+        while (curr) {
+            ListNode* next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
         }
-        int n = store.size();
-        int i = 0, j = n - 1;
-        while(i < j){
-            if(store[i] != store[j]){
+        return prev;
+    }
+
+    ListNode* findMiddleNode(ListNode* head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+        ListNode* prev = nullptr;
+        while (fast && fast->next) {
+            prev = slow;
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        if (prev) {
+            prev->next = NULL;  // Split the list into two halves
+        }
+        return slow;
+    }
+
+    bool isPalindrome(ListNode* head) {
+        if (!head || !head->next) {
+            return true;
+        }
+
+        ListNode* mid = findMiddleNode(head);
+        ListNode* revAfterMid = reverseLL(mid);
+
+        ListNode* curr = head;
+        ListNode* revCurr = revAfterMid;
+
+        while (revCurr) {
+            if (curr->val != revCurr->val) {
                 return false;
             }
-            i++; j--;
+            curr = curr->next;
+            revCurr = revCurr->next;
         }
         return true;
     }
