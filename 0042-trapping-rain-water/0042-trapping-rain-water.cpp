@@ -1,20 +1,25 @@
 class Solution {
 public:
-    int trap(vector<int>& arr) {
-        int n = arr.size();
-        int res = 0;
-        for(int i = 0; i < n; i++){
-            int lmax = arr[i];
-            for(int j = 0; j < i; j++){
-                lmax = max(lmax, arr[j]);
+    int trap(vector<int>& nums) {
+        int n = nums.size();
+        int l = 0, r = n - 1;
+        int lmax = 0, rmax = 0;
+        int result= 0;
+        while(l < r){
+            if(nums[l] <= nums[r]){
+                if(nums[l] >= lmax)
+                    lmax = nums[l];
+                else
+                    result += (lmax - nums[l]);
+                l++;
+            }else if(nums[r] <= nums[l]){
+                if(nums[r] >= rmax)
+                    rmax = nums[r];
+                else
+                    result += (rmax - nums[r]);
+                r--;
             }
-            int rmax = arr[i];
-            for(int j = i+1; j < n; j++){
-                rmax = max(rmax, arr[j]);
-            }
-            int empSpace = min(lmax, rmax) - arr[i];
-            res += empSpace;
         }
-        return res;
+        return result;
     }
 };
