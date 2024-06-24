@@ -1,37 +1,32 @@
 class Solution {
 public:
 
-    vector<int> removeDuplicates(vector<int>& candidates){
-        vector<int> res;
-        unordered_map<int, int> umap;
-        for(int it: candidates){
-            umap[it]++;
-        }
-        for(auto it = umap.begin(); it != umap.end(); it++){
-            res.push_back(it->first);
-        }
-        return res;
-    }
-
-    void findCombination(int idx, int target, vector<int>& arr, vector<vector<int>>& ans, vector<int>& ds){
+    void findCombinations(int idx, int target, vector<int>& arr, vector<int>& ds, vector<vector<int>>& ans){
         if(target == 0){
             ans.push_back(ds);
             return;
         }
+            
         for(int i = idx; i < arr.size(); i++){
-            if(i > idx && arr[i] == arr[i-1]) continue; // skip duplicates
-            if(arr[i] > target) break;
+            if(i > idx && arr[i-1] == arr[i])
+                continue;
+            if(arr[i] > target)
+                break;
             ds.push_back(arr[i]);
-            findCombination(i + 1, target - arr[i], arr, ans, ds);
+            findCombinations(i + 1, target - arr[i], arr, ds, ans);
             ds.pop_back();
         }
-    }
 
+
+    }
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        int n = candidates.size();
+
         sort(candidates.begin(), candidates.end());
-        vector<vector<int>> ans;
         vector<int> ds;
-        findCombination(0, target, candidates, ans, ds);
+        vector<vector<int>> ans;
+
+        findCombinations(0, target, candidates, ds, ans);
         return ans;
     }
 };
