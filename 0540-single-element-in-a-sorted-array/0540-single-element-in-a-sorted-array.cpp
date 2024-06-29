@@ -1,11 +1,18 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        int n = nums.size();
-        int curr_xor=0; //variable will store XOR
-        for(int i =0;i<n;i++){
-            curr_xor ^= nums[i]; // XOR
+        int l = 0;
+        int h = nums.size() - 1;
+
+        while(l < h){
+            int mid = (l + h) / 2;
+            if( mid > 0 && mid < nums.size() - 1 && nums[mid] != nums[mid - 1] && nums[mid] != nums[mid + 1])
+                return nums[mid];
+            if((mid % 2 == 0 && nums[mid + 1] == nums[mid]) || (mid % 2 != 0 && nums[mid - 1] == nums[mid]))
+                l = mid + 1;
+            else 
+                h = mid;
         }
-        return curr_xor;
+        return nums[l];
     }
 };
