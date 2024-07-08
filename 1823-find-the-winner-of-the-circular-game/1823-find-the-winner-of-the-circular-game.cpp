@@ -1,15 +1,15 @@
 class Solution {
 public:
-    int josephus(int n, int k) {
-        // Base case
-        if (n == 1) {
-            return 0;
-        }
-        // Recursive step
-        return (josephus(n - 1, k) + k) % n;
-    }
-
     int findTheWinner(int n, int k) {
-        return josephus(n, k) + 1;
+        vector<int> store(n);
+        for(int i = 0; i < n; i++){
+            store[i] = i + 1;
+        }
+        int idxToRemove = 0;
+        while(store.size() > 1){
+            idxToRemove = (idxToRemove + k - 1) % store.size();
+            store.erase(store.begin() + idxToRemove);
+        }
+        return store[0];
     }
 };
