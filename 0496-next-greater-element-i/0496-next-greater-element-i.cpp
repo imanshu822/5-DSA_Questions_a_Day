@@ -16,8 +16,6 @@ public:
                         nums1[i] = -1;
                     }
                 }
-            }else{
-                nums1[i] = -1;
             }
         } 
         return nums1;  
