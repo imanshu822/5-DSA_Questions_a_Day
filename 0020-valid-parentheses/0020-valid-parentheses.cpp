@@ -1,15 +1,31 @@
 class Solution {
 public:
+    bool isCorrectClosingBracket(char top, char ch){
+        if(top == '(' && ch == ')')
+            return true;
+        if(top == '{' && ch == '}')
+            return true;
+        if(top == '[' && ch == ']')
+            return true;
+        return false;
+    }
     bool isValid(string s) {
-        stack<char> st;
-        for(int i = 0; i < s.size(); i++){
-            if(s[i] == '(' || s[i] == '{' || s[i] == '[')
-                st.push(s[i]);
-            if((s[i] == ')' && st.top() == '(') || (s[i] == '}' && st.top() == '{') || (s[i] == ']' && st.top() == '['))
+        stack<int> st;
+        int n = s.size();
+
+        for(int i = 0; i < n; i++){
+            char ch = s[i];
+            if(ch == '(' || ch == '{' || ch == '['){
+                st.push(ch);
+            }else if(!st.empty() && isCorrectClosingBracket(st.top(), ch)){
                 st.pop();
+            }else{
+                return false;
+            }
         }
-
-        return st.empty();
-
+        if(st.empty()){
+            return true;
+        }
+        return false;
     }
 };
