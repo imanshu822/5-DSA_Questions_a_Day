@@ -11,14 +11,33 @@
  */
 class Solution {
 public:
-    vector<int> v;
     vector<int> inorderTraversal(TreeNode* root) {
-        if(root == NULL){
-            return v;
+        vector<int> res;
+        TreeNode* curr = root;
+
+        while(curr != NULL){
+            if(curr->left == NULL){
+                res.push_back(curr->val);
+                curr = curr->right;
+            }else{
+                TreeNode* leftChild = curr->left;
+
+                while(leftChild->right != NULL){
+                    leftChild = leftChild->right;
+                }
+                
+                leftChild->right = curr;
+
+                // delete the curr left child connection
+
+                TreeNode* temp = curr;
+
+                curr = curr->left;
+                
+                temp->left = NULL;
+
+            }
         }
-        inorderTraversal(root->left);
-        v.push_back(root->val);
-        inorderTraversal(root->right);
-        return v;
+        return res;
     }
 };
