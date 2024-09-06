@@ -10,23 +10,22 @@ public:
     }
 
     bool isBalanced(TreeNode* root) {
-        if(root == nullptr){
+        if(root == NULL){
             return true;
         }
 
-        // Check if left and right subtrees are balanced
-        if(!isBalanced(root->left) || !isBalanced(root->right)){
-            return false;
-        }
-
-        // Check if current node is balanced by comparing heights
         int leftHeight = height(root->left);
         int rightHeight = height(root->right);
 
         if(abs(leftHeight - rightHeight) > 1){
             return false;
-        } else {
-            return true;
         }
+        bool left =  isBalanced(root->left);
+        bool right = isBalanced(root->right);
+
+        if(left == false || right == false){
+            return false;
+        }
+        return true;
     }
 };
