@@ -24,13 +24,14 @@ public:
     bool findTarget(TreeNode* root, int k) {
         storeInVector(root);
         int n = store.size();
-        for(int i= 0; i < n; i++){
+        int sum = 0;
+        set<int> st;
+        for(int i = 0; i < n; i++){
             int rem = k - store[i];
-            for(int j = i+1; j < n; j++){
-                if(store[j] == rem){
-                    return true;
-                }
-            }
+            if(st.find(rem) != st.end())
+                return true;
+            st.insert(store[i]);
+
         }
         return false;
     }
