@@ -11,28 +11,19 @@
  */
 class Solution {
 public:
-    vector<int> store;
-
-    void storeInVector(TreeNode* root){
-        if(root == NULL){
-            return;
-        }
-        store.push_back(root->val);
-        storeInVector(root->left);
-        storeInVector(root->right);
-    }
+    unordered_set<int> st;
     bool findTarget(TreeNode* root, int k) {
-        storeInVector(root);
-        int n = store.size();
-        int sum = 0;
-        set<int> st;
-        for(int i = 0; i < n; i++){
-            int rem = k - store[i];
-            if(st.find(rem) != st.end())
-                return true;
-            st.insert(store[i]);
-
+        if(root == NULL){
+            return false;
         }
-        return false;
+
+        if(st.find(k - root->val) != st.end()){
+            return true;
+        }
+        st.insert(root->val);
+        bool fromLeftSide = findTarget(root->left, k);
+        bool fromRightSide = findTarget(root->right, k);
+
+        return fromLeftSide || fromRightSide;
     }
 };
