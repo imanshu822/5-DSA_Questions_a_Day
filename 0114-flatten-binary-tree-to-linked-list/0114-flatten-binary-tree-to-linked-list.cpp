@@ -11,24 +11,16 @@
  */
 class Solution {
 public:
-    vector<TreeNode*> store;
-    void storeInVector(TreeNode* root){
-        if(root == NULL){
-            return;
-        }
-        store.push_back(root);
-        storeInVector(root->left);
-        storeInVector(root->right);
-        return;
-    }
+    TreeNode* prev = NULL;
     void flatten(TreeNode* root) {
-        if(root == NULL)
-            return;
-        storeInVector(root);
-        
-        for(int i = 1; i < store.size(); i++){
-            store[i-1]->left = NULL;
-            store[i-1]->right = store[i];
-        }
+       if(root == NULL){
+        return;
+       } 
+       flatten(root->right);
+       flatten(root->left);
+
+       root->right = prev;
+       root->left = NULL;
+       prev = root;
     }
 };
