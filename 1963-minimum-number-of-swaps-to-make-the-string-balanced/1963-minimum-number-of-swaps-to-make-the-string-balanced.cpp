@@ -11,21 +11,11 @@ public:
             }else{
                 if(!st.empty() && st.top() == '['){
                     st.pop();
-                }else{
-                    st.push(ch);
                 }
             }
         }
-        int a = 0, b = 0;
-        while(!st.empty()){
-            if(st.top() == '['){
-                a++;
-            }else{
-                b++;
-            }
-            st.pop();
-        }
+       
 
-        return ((a+1)/2 + (b+1)/2)/2;
+        return (st.size()+1)/2;
     }
 };
