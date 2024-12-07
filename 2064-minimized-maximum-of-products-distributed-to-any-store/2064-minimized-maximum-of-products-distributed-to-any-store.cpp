@@ -9,6 +9,7 @@ public:
         }
         return stores<=n;
     }
+
     int minimizedMaximum(int n, vector<int>& quantities) {
         int s=1,e=100000,ans=-1;
         while(s<=e){
